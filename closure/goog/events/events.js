@@ -971,6 +971,12 @@ goog.events.wrapListener = function(listener) {
     return listener;
   }
 
+  // TODO(max.nikitin@): hacked for compiling
+  if (goog.isNull(listener)) {
+    throw Error('Listener can\'t be null');
+  }
+  listener = /** @type {!Object} */ (listener);
+
   goog.asserts.assert(
       listener.handleEvent, 'An object listener must have handleEvent method.');
   if (!listener[goog.events.LISTENER_WRAPPER_PROP_]) {

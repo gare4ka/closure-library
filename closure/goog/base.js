@@ -21,7 +21,7 @@
  *
  * @author arv@google.com (Erik Arvidsson)
  *
- * @provideGoog
+ * TODO(max.nikitin): @provideGoog was removed for plovr compiling
  */
 
 
@@ -1054,8 +1054,9 @@ if (goog.DEPENDENCIES_ENABLED) {
         var isDeps = /\bdeps.js$/.test(src);
         if (isDeps) {
           return false;
-        } else {
-          throw Error('Cannot write "' + src + '" after document load');
+        } else if (goog.global.console) {
+          //TODO(max.nikitin@): IE8-9 writes some scripts after complete state
+          goog.global.console['log']('You try to write "' + src + '" after document load');
         }
       }
 
