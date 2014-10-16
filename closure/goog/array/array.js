@@ -1194,7 +1194,7 @@ goog.array.stableSort = function(arr, opt_compareFn) {
  *     whether the first argument is less than, equal to, or greater than the
  *     second.
  * @template T
- * @template K
+ * //TODO (@gare4ka): remove @template K for compiling
  */
 goog.array.sortByKey = function(arr, keyFn, opt_compareFn) {
   var keyCompareFn = opt_compareFn || goog.array.defaultCompare;

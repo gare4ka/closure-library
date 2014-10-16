@@ -518,7 +518,7 @@ goog.html.SafeHtml.TYPE_MARKER_GOOG_HTML_SECURITY_PRIVATE_ = {};
  * @param {?goog.i18n.bidi.Dir} dir The directionality of the SafeHtml to be
  *     constructed, or null if unknown.
  * @return {!goog.html.SafeHtml} The initialized SafeHtml object.
- * @package
+ * //TODO (@gare4ka): remove @package for compiling (unknown JSDoc)
  */
 goog.html.SafeHtml.createSafeHtmlSecurityPrivateDoNotAccessOrElse = function(
     html, dir) {

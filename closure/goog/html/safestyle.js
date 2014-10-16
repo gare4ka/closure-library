@@ -277,7 +277,7 @@ goog.html.SafeStyle.unwrap = function(safeStyle) {
  *
  * @param {string} style The string to initialize the SafeStyle object with.
  * @return {!goog.html.SafeStyle} The initialized SafeStyle object.
- * @package
+ * //TODO (@gare4ka): remove @package for compiling (unknown JSDoc)
  */
 goog.html.SafeStyle.createSafeStyleSecurityPrivateDoNotAccessOrElse =
     function(style) {
