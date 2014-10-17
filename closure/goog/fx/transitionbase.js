@@ -34,7 +34,8 @@ goog.require('goog.fx.Transition.EventType');
  * @extends {goog.events.EventTarget}
  */
 goog.fx.TransitionBase = function() {
-  goog.fx.TransitionBase.base(this, 'constructor');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this);
 
   /**
    * The internal state of the animation.

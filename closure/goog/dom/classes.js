@@ -94,8 +94,8 @@ goog.dom.classes.remove = function(element, var_args) {
 
 
 /**
- * Helper method for {@link goog.dom.classes.add} and
- * {@link goog.dom.classes.addRemove}. Adds one or more classes to the supplied
+ * Helper method for {@link goog.dom.classlist.add} and
+ * {@link goog.dom.classlist.addRemove}. Adds one or more classes to the supplied
  * classes array.
  * @param {Array.<string>} classes All class names for the element, will be
  *     updated to have the classes supplied in {@code args} added.
@@ -112,8 +112,8 @@ goog.dom.classes.add_ = function(classes, args) {
 
 
 /**
- * Helper method for {@link goog.dom.classes.remove} and
- * {@link goog.dom.classes.addRemove}. Calculates the difference of two arrays.
+ * Helper method for {@link goog.dom.classlist.remove} and
+ * {@link goog.dom.classlist.addRemove}. Calculates the difference of two arrays.
  * @param {!Array.<string>} arr1 First array.
  * @param {!Array.<string>} arr2 Second array.
  * @return {!Array.<string>} The first array without the elements of the second
@@ -158,12 +158,12 @@ goog.dom.classes.swap = function(element, fromClass, toClass) {
 
 /**
  * Adds zero or more classes to an element and removes zero or more as a single
- * operation. Unlike calling {@link goog.dom.classes.add} and
- * {@link goog.dom.classes.remove} separately, this is more efficient as it only
+ * operation. Unlike calling {@link goog.dom.classlist.add} and
+ * {@link goog.dom.classlist.remove} separately, this is more efficient as it only
  * parses the class property once.
  *
  * If a class is in both the remove and add lists, it will be added. Thus,
- * you can use this instead of {@link goog.dom.classes.swap} when you have
+ * you can use this instead of {@link goog.dom.classlist.swap} when you have
  * more than two class names that you want to swap.
  *
  * @param {Node} element DOM node to swap classes on.

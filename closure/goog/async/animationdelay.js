@@ -56,7 +56,8 @@ goog.require('goog.functions');
  * @final
  */
 goog.async.AnimationDelay = function(listener, opt_window, opt_handler) {
-  goog.async.AnimationDelay.base(this, 'constructor');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this);
 
   /**
    * The function that will be invoked after a delay.
@@ -236,7 +237,8 @@ goog.async.AnimationDelay.prototype.doAction_ = function() {
 /** @override */
 goog.async.AnimationDelay.prototype.disposeInternal = function() {
   this.stop();
-  goog.async.AnimationDelay.base(this, 'disposeInternal');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, 'disposeInternal');
 };
 
 

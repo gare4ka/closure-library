@@ -64,7 +64,8 @@ goog.require('goog.ui.ac.AutoComplete');
  */
 goog.ui.ac.Renderer = function(opt_parentNode, opt_customRenderer,
     opt_rightAlign, opt_useStandardHighlighting) {
-  goog.ui.ac.Renderer.base(this, 'constructor');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this);
 
   /**
    * Reference to the parent element that will hold the autocomplete elements
@@ -759,7 +760,8 @@ goog.ui.ac.Renderer.prototype.disposeInternal = function() {
   goog.dispose(this.animation_);
   this.parent_ = null;
 
-  goog.ui.ac.Renderer.base(this, 'disposeInternal');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, 'disposeInternal');
 };
 
 

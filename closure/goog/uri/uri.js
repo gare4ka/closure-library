@@ -622,7 +622,7 @@ goog.Uri.prototype.setParameterValue = function(key, value) {
  * </code> yields <tt>foo?a=b&e=f&c=new</tt>.</p>
  *
  * @param {string} key The parameter to set.
- * @param {*} values The new values. If values is a single
+ * @param {Array.<?>} values The new values. If values is a single
  *     string then it will be treated as the sole value.
  * @return {!goog.Uri} Reference to this URI object.
  */

@@ -983,7 +983,7 @@ if (goog.DEPENDENCIES_ENABLED) {
       if (goog.isFunction(moduleDef)) {
         exports = moduleDef.call(goog.global, {});
       } else if (goog.isString(moduleDef)) {
-        exports = goog.loadModuleFromSource_.call(goog.global, moduleDef);
+        //exports = goog.loadModuleFromSource_.call(goog.global, moduleDef);
       } else {
         throw Error('Invalid module definition');
       }

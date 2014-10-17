@@ -57,7 +57,7 @@ goog.require('goog.promise.Resolver');
  *
  * @param {function(
  *             this:RESOLVER_CONTEXT,
- *             function((TYPE|IThenable.<TYPE>|Thenable)=),
+ *             function((TYPE|Object.<TYPE>|Object)=),
  *             function(*)): void} resolver
  *     Initialization function that is invoked immediately with {@code resolve}
  *     and {@code reject} functions as arguments. The Promise is resolved or
@@ -233,7 +233,7 @@ goog.Promise.CallbackEntry_;
 
 
 /**
- * @param {(TYPE|goog.Thenable.<TYPE>|Thenable)=} opt_value
+ * @param {(TYPE|goog.Thenable.<TYPE>|Object)=} opt_value
  * @return {!goog.Promise.<TYPE>} A new Promise that is immediately resolved
  *     with the given value.
  * @template TYPE
@@ -258,7 +258,7 @@ goog.Promise.reject = function(opt_reason) {
 
 
 /**
- * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
+ * @param {!Array.<!(goog.Thenable.<TYPE>|Object)>} promises
  * @return {!goog.Promise.<TYPE>} A Promise that receives the result of the
  *     first Promise (or Promise-like) input to complete.
  * @template TYPE
@@ -276,7 +276,7 @@ goog.Promise.race = function(promises) {
 
 
 /**
- * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
+ * @param {!Array.<!(goog.Thenable.<TYPE>|Object)>} promises
  * @return {!goog.Promise.<!Array.<TYPE>>} A Promise that receives a list of
  *     every fulfilled value once every input Promise (or Promise-like) is
  *     successfully fulfilled, or is rejected by the first rejection result.
@@ -312,7 +312,7 @@ goog.Promise.all = function(promises) {
 
 
 /**
- * @param {!Array.<!(goog.Thenable.<TYPE>|Thenable)>} promises
+ * @param {!Array.<!(goog.Thenable.<TYPE>|Object)>} promises
  * @return {!goog.Promise.<TYPE>} A Promise that receives the value of the first
  *     input to be fulfilled, or is rejected with a list of every rejection
  *     reason if all inputs are rejected.
@@ -585,7 +585,7 @@ goog.Promise.prototype.addCallbackEntry_ = function(callbackEntry) {
  * @see http://promisesaplus.com/#the__method
  *
  * @param {?function(this:THIS, TYPE):
- *          (RESULT|goog.Promise.<RESULT>|Thenable)} onFulfilled A callback that
+ *          (RESULT|goog.Promise.<RESULT>|Object)} onFulfilled A callback that
  *     will be invoked if the Promise is fullfilled, or null.
  * @param {?function(this:THIS, *): *} onRejected A callback that will be
  *     invoked if the Promise is rejected, or null.
@@ -730,7 +730,7 @@ goog.Promise.prototype.resolve_ = function(state, x) {
  *
  * @see http://promisesaplus.com/#point-70
  *
- * @param {Thenable} thenable An object with a {@code then} method that may be
+ * @param {Object} thenable An object with a {@code then} method that may be
  *     compatible with the Promise/A+ specification.
  * @param {!Function} then The {@code then} method of the Thenable object.
  * @private
@@ -980,7 +980,7 @@ goog.Promise.CancellationError.prototype.name = 'cancel';
  * Internal implementation of the resolver interface.
  *
  * @param {!goog.Promise.<TYPE>} promise
- * @param {function((TYPE|goog.Promise.<TYPE>|Thenable)=)} resolve
+ * @param {function((TYPE|goog.Promise.<TYPE>|Object)=)} resolve
  * @param {function(*): void} reject
  * @implements {goog.promise.Resolver.<TYPE>}
  * @final @struct

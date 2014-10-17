@@ -57,7 +57,8 @@ goog.require('goog.userAgent');
  * @extends {goog.events.EventTarget}
  */
 goog.events.InputHandler = function(element) {
-  goog.events.InputHandler.base(this, 'constructor');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this);
 
   /**
    * Id of a timer used to postpone firing input event in emulation mode.
@@ -213,7 +214,8 @@ goog.events.InputHandler.prototype.createInputEvent_ = function(be) {
 
 /** @override */
 goog.events.InputHandler.prototype.disposeInternal = function() {
-  goog.events.InputHandler.base(this, 'disposeInternal');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, 'disposeInternal');
   this.eventHandler_.dispose();
   this.cancelTimerIfSet_();
   delete this.element_;

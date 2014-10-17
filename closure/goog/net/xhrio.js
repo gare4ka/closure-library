@@ -70,7 +70,8 @@ goog.forwardDeclare('goog.Uri');
  * @extends {goog.events.EventTarget}
  */
 goog.net.XhrIo = function(opt_xmlHttpFactory) {
-  goog.net.XhrIo.base(this, 'constructor');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this);
 
   /**
    * Map of default headers to add to every request, use:
@@ -710,7 +711,8 @@ goog.net.XhrIo.prototype.disposeInternal = function() {
     this.cleanUpXhr_(true);
   }
 
-  goog.net.XhrIo.base(this, 'disposeInternal');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, 'disposeInternal');
 };
 
 

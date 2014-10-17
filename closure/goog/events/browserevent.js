@@ -65,7 +65,8 @@ goog.require('goog.userAgent');
  * @extends {goog.events.Event}
  */
 goog.events.BrowserEvent = function(opt_e, opt_currentTarget) {
-  goog.events.BrowserEvent.base(this, 'constructor', opt_e ? opt_e.type : '');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, opt_e ? opt_e.type : '');
 
   /**
    * Target that fired the event.

@@ -47,7 +47,8 @@ goog.require('goog.fx.anim.Animated');  // Unreferenced: interface
  * @extends {goog.fx.TransitionBase}
  */
 goog.fx.Animation = function(start, end, duration, opt_acc) {
-  goog.fx.Animation.base(this, 'constructor');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this);
 
   if (!goog.isArray(start) || !goog.isArray(end)) {
     throw Error('Start and end parameters must be arrays');
@@ -358,7 +359,8 @@ goog.fx.Animation.prototype.disposeInternal = function() {
     this.stop(false);
   }
   this.onDestroy();
-  goog.fx.Animation.base(this, 'disposeInternal');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, 'disposeInternal');
 };
 
 
@@ -462,7 +464,8 @@ goog.fx.Animation.prototype.dispatchAnimationEvent = function(type) {
  * @extends {goog.events.Event}
  */
 goog.fx.AnimationEvent = function(type, anim) {
-  goog.fx.AnimationEvent.base(this, 'constructor', type);
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, type);
 
   /**
    * The current coordinates.

@@ -45,7 +45,8 @@ goog.require('goog.debug.Trace');
  * @implements {goog.debug.EntryPointMonitor}
  */
 goog.debug.ErrorHandler = function(handler) {
-  goog.debug.ErrorHandler.base(this, 'constructor');
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this);
 
   /**
    * Handler for exceptions, which can do logging, reporting, etc.
@@ -323,8 +324,8 @@ goog.debug.ErrorHandler.prototype.disposeInternal = function() {
   var win = goog.getObjectByName('window');
   win.setTimeout = this.unwrap(win.setTimeout);
   win.setInterval = this.unwrap(win.setInterval);
-
-  goog.debug.ErrorHandler.base(this, 'disposeInternal');
+//TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, 'disposeInternal');
 };
 
 
@@ -340,8 +341,8 @@ goog.debug.ErrorHandler.prototype.disposeInternal = function() {
 goog.debug.ErrorHandler.ProtectedFunctionError = function(cause) {
   var message = goog.debug.ErrorHandler.ProtectedFunctionError.MESSAGE_PREFIX +
       (cause && cause.message ? String(cause.message) : String(cause));
-  goog.debug.ErrorHandler.ProtectedFunctionError.base(
-      this, 'constructor', message);
+  //TODO @G remove new <ctor>.base() for compiling
+  goog.base(this, message);
 
   /**
    * The error thrown by the entry point.
