@@ -879,7 +879,8 @@ goog.ui.PopupBase.prototype.shouldDebounce_ = function() {
 
 /** @override */
 goog.ui.PopupBase.prototype.disposeInternal = function() {
-  goog.ui.PopupBase.base(this, 'disposeInternal');
+  //TODO @G rewrire for compiling
+  goog.base(this, 'disposeInternal');
   this.handler_.dispose();
   goog.dispose(this.showTransition_);
   goog.dispose(this.hideTransition_);
